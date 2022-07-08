@@ -1,0 +1,943 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: initial;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+h1{
+    font-weight: 400;
+}
+
+h2{
+    font-weight:300;
+}
+
+p{
+
+}
+
+section.home{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.home .cont{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+/*home*/
+
+
+.logo{
+    width: 350px;
+    margin: auto;
+    transition: all .5s ease;
+}
+
+.logo:hover path, polygon{
+    fill:#1c1c1c;
+    transition: all .5s ease;
+}
+
+.logo:hover  polygon{
+    fill:#1c1c1c;
+    transition: all .5s ease;
+}
+
+.logo:hover  rect{
+    fill:#1c1c1c;
+    transition: all .5s ease;
+}
+
+.logo path{
+    stroke-width: 0;
+    transition: all .5s ease;
+    fill:#888;
+}
+
+.logo polygon{
+    stroke-width: 0;
+    fill:#888;
+    transition: all .5s ease;
+}
+
+.logo rect{
+    stroke-width: 0;
+    fill: #888;
+}
+.home .left{
+    width: 40%;
+}
+
+.linea{
+    position: relative;
+    height: 600px;
+    width: 2px;
+    background: #1c1c1c;
+    animation: linea 2s ease forwards;
+}
+
+.linea .circulocont{
+    position: absolute;
+    bottom: -30px;
+    left: -2px;
+}
+
+.linea .circulocont .circulo{
+    background-color:#1c1c1c;
+    border-radius: 10px;
+    margin: 5px 0;
+
+    width: 5px;
+    height: 5px;
+    opacity: 0;
+}
+.circulouno{
+    animation: circulo 1s linear 1s forwards;
+}
+
+.circulodos{
+    animation: circulo 1s linear 1.5s forwards;
+}
+
+@keyframes linea {
+    from {height: 0;}
+    to {height: 600px;}
+}
+
+@keyframes circulo {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.home .right{
+    width: 60%;
+    height: 80%;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.home .right .homeredes{
+    display: flex;
+    position: absolute;
+    right: 250px;
+    bottom: -70px;
+}
+
+
+.home .right ul{
+    list-style: none;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.home .right ul a{
+    width: 250px;
+}
+
+.home .right ul li{
+    position: relative;
+}
+
+.right ul li:hover .hovergray{
+    opacity: .8;
+}
+
+.right ul li:hover h2{
+    opacity: 1;
+}
+
+.right ul li .hovergray{
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.right ul li h2{
+    color: #ffffff;
+    z-index: 1;
+    opacity: 0;
+    transition: all .5s ease;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 50px;
+    text-align: center;
+}
+
+.home .menu{
+    width: 45px;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    position: absolute;
+    right: 2.555%;
+    top: 50%;
+}
+
+.home .menu .barrita{
+    width: 100%;
+    height: 2px;
+    background-color: #1c1c1c;
+}
+
+.hiddenmenu{
+    background-color: #ffffff;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hiddenmenu.activo{
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.tachecito{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right: 10%;
+    cursor: pointer;
+}
+
+
+.hiddenmenu ul{
+    list-style: none;
+    padding: 0;
+}
+
+.hiddenmenu ul li p{
+    font-weight: 100;
+    font-size: 35px;
+}
+
+.hiddenmenu ul li p::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #000000;
+    margin: 10px auto 0 auto;
+    transition: all .5s ease;
+}
+
+.hiddenmenu ul li p:hover::after{
+    width: 70%;
+}
+
+.redesresponsivo{
+    position: absolute;
+    bottom: 20%;
+    display: flex;
+}
+
+/*end home*/
+
+
+/*proyectos*/
+nav{
+    position: fixed;
+    width: 100%;
+    z-index: 9998;
+    padding: 15px 50px 0 50px;
+    box-sizing: border-box;
+    top: 0;
+    background-color: #f7f7f7;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom:solid 1px #000000;
+    padding-bottom: 10px;
+}
+
+
+nav ul li p{
+    position: relative;
+    margin: 0 0 5px 0;
+}
+
+nav ul li p::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #000000;
+    transition: all .5s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+nav ul li:hover p::after{
+    width: 100%;
+}
+
+nav ul li .logo{
+    width: 110px;
+}
+
+.burguer{
+    width: 50px;
+    height: 50px;
+    border:1px solid black;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.burguer > div{
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin: 0 auto;
+}
+
+.segundomenuhidden{
+    display: none;
+}
+
+.segundomenuhidden ul{
+    list-style: none;
+    padding: 0;
+}
+
+.segundomenuhidden ul li p{
+    font-weight: 100;
+    font-size: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.segundomenuhidden ul li p::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #000000;
+    transition: all .5s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.segundomenuhidden ul li:hover p::after{
+    width: 100%;
+}
+
+.segundomenuhidden.activo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+.redes{
+    display: flex;
+}
+
+.red{
+    width: 40px;
+    margin: 0 5px;
+}
+
+.red svg{
+    transition: all .5s ease;
+}
+
+.red:hover circle , polyline{
+    fill: black;
+    transition: all .5s ease;
+}
+
+.red path, circle,polyline{
+    fill:white;
+    stroke: black;
+    stroke-width: 2px;
+    transition: all .5s ease;
+}
+
+.proyectos{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 50px;
+    margin-top: 110px;
+}
+
+.proyectos .left{
+    width: 35%;
+}
+
+.proyectos .right{
+    width: 40%;
+    margin: 0 auto;
+}
+.proyectos .right p{
+    font-weight:100;
+}
+
+.proyectos_footer{
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.proyectos_footer .proyecto{
+    margin: 0 15px;
+    opacity: .5;
+    transition: all .3s ease;
+}
+
+.proyectos_footer .proyecto .barra-proyecto{
+    width: 50%;
+    margin: auto;
+    height: 2px;
+    background-color: #000000;
+    transition: all .5s ease;
+}
+
+.proyectos_footer .proyecto p{
+    text-align: center;
+}
+
+.proyectos_footer .proyecto:hover .barra-proyecto{
+    width: 100%;
+}
+
+.proyectos_footer .proyecto:hover{
+    opacity: 1;
+}
+
+
+.proyectos_footer .proyecto.active .barra-proyecto{
+    width: 100%;
+}
+.proyectos_footer .proyecto.active {
+    opacity: 1;
+}
+
+
+
+.slick-dots {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.slick-dots li{
+    margin: 0 15px;
+
+}
+
+.slick-dots li button{
+    background: none;
+    border: none;
+    background: #9d9d9d;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    content: none;
+    font-size: 0;
+    cursor: pointer;
+    padding: 0;
+}
+
+.slick-dots li.slick-active button{
+    background: #444;
+}
+
+
+
+/**********  PROYECTOS GRID ***********/
+
+section.proyectos-grid{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.proyectos-grid .cont{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proyectos-grid .right{
+    width: 65%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.proyectos-grid .right .homeredes{
+    display: flex;
+    position: absolute;
+    right: 250px;
+    bottom: -70px;
+}
+
+
+.proyectos-grid .right ul{
+    list-style: none;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.proyectos-grid .right ul a{
+    width: 250px;
+}
+
+.proyectos-grid .right ul li{
+    position: relative;
+}
+
+
+
+/*end proyectos*/
+
+
+
+
+
+/*********************  CONTACTO  ******************************************/
+
+.contacto{
+    margin: 110px 0 50px 0;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto .left{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.map-cont{
+    width: 100%;
+}
+
+.contacto .left p{
+    font-weight: 100;
+    text-align: right;
+}
+
+.contacto .right{
+    width: 40%;
+}
+
+.contacto .right form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+.contacto .right form label{
+   margin-bottom: 15px;
+}
+
+.contacto .right form label >div{
+    font-weight: 100;
+}
+.contacto .right form label >div span{
+    color: #6a6a6a;
+}
+
+.contacto .right form label input,textarea{
+    width: 100%;
+    background: #eee;
+    border: 2px #ddd solid;
+    padding: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 30%;
+    background: white;
+    border: 2px #ddd solid;
+    padding: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+#map {
+    height: 100%;
+}
+
+.middle #eapps-instagram-feed-1 > a{
+    width: 0px;
+    height: 100px;
+    margin: 0 auto;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.ola{
+    position: absolute;
+    background: white;
+    width: 100%;
+    bottom: 0;
+    height: 50px;
+    left: 0;
+    z-index: 999999;
+}
+/*********************  END CONTACTO  **************************************/
+
+/*********************  NOSOTROS  ******************************************/
+
+.us{
+    margin: 110px 0 50px 0;
+    padding: 0 50px;
+}
+
+.us .cont{
+    width: 80%;
+    margin: auto;
+}
+
+.us .grid{
+    margin: 50px 0;
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 350px);
+    align-content: space-around;
+    justify-content: space-between;
+}
+
+.us .grid .worker{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+}
+
+.us .grid .worker img{
+    position: absolute;
+    transition: all .3s ease;
+}
+
+.us .grid .worker p{
+
+}
+
+.us .grid .worker:hover img{
+    opacity: 0;
+}
+
+.img-grupo{
+    height: 600px;
+    background-image: url("../images/nosotros/grupo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0;
+}
+
+.estudio{
+    margin-top: 110px;
+}
+
+.estudio .cont{
+    display: flex;
+    margin: 0 50px;
+}
+
+.imgestudio{
+    width: 500px;
+}
+
+.estudio-left{
+    width: 40%;
+}
+
+.estudio-right{
+    width: 50%;
+}
+
+.estudio-right p{
+    font-weight: 100;
+}
+/*********************  END NOSOTROS  **************************************/
+@media screen and (max-width: 1400px) {
+    section.home{
+        height: initial;
+    }
+
+    section.home .cont{
+        flex-direction: column;
+        height: initial;
+    }
+
+    .linea{
+        display: none;
+    }
+    .home .left{
+        margin-bottom: 50px;
+    }
+
+    .home .right{
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .img-grupo{
+        background-size: contain;
+        height: 520px;
+    }
+
+    .home .left{
+        width: 100%;
+        margin: 50px auto;
+    }
+
+
+    .home .right ul{
+        grid-template-columns: repeat(2, 250px);
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .home .right ul a {
+        width: initial;
+    }
+
+    .home .menu{
+        top: 30px;
+        right: 30px;
+    }
+
+    .home .right .homeredes {
+        display: flex;
+        position: absolute;
+        right: 42%;
+        bottom: -70px;
+    }
+
+
+    .us .grid{
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(2, 350px);
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .proyectos{
+        flex-direction: column;
+    }
+
+    .proyectos .right{
+        width: 100%;
+        margin: 0;
+    }
+    .proyectos .left{
+        width: 100%;
+        margin: 25px auto;
+    }
+
+    .estudio .cont{
+        flex-direction: column;
+    }
+
+    .estudio-left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .estudio-left img{
+
+    }
+
+    .estudio-right{
+        width: 100%;
+    }
+
+    .proyectos-grid .right ul{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .img-grupo{
+        background-size: contain;
+        height: 500px;
+    }
+
+    .home .left .logo{
+        width: 200px;
+    }
+    .home .right ul{
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .home .right ul a{
+        width: 300px !important;
+        margin: auto;
+        text-align: center;
+    }
+    .us{
+        padding: 0 10px;
+    }
+    .us .grid{
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(1, 350px);
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .proyectos_footer{
+        flex-direction: column;
+    }
+
+    .proyectos_footer .proyecto .barra-proyecto{
+        width: 100px;
+    }
+    .proyectos_footer .proyecto:hover .barra-proyecto{
+        width: 200px;
+    }
+
+    nav ul li:nth-child(n+2) {
+        display: none;
+    }
+    .redes{
+        display: none;
+    }
+
+    .burguer{
+        display: flex;
+        cursor: pointer;
+    }
+
+
+    .contacto{
+        flex-direction: column;
+        margin-top: 130px;
+    }
+
+    .contacto .left{
+        width: 100%;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .map-cont{
+        width: 100%;
+    }
+
+    .contacto .right{
+        width: 100%;
+    }
+
+    .proyectos-grid .right ul{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    section.proyectos-grid {
+        height: initial;
+        margin-top: 110px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+
+    .us .grid .worker{
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .segundomenuhidden ul li p{
+        font-weight: 100;
+        font-size: 30px;
+        text-align: center;
+        position: relative;
+    }
+    .proyectos-grid .right ul{
+        grid-template-columns: 1fr;
+    }
+
+    .img-grupo {
+        background-attachment: initial;
+        background-size: contain;
+        height: 250px;
+    }
+}
